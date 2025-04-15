@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/kartik-rajasthan-glow/', // 👈 add this line
+  base: '/kartik-rajasthan-glow.github.io/', // 👈 add this line
   server: {
     host: "::",
     port: 8080,
