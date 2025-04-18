@@ -1,65 +1,49 @@
 
-import { Card, CardContent } from "@/components/ui/card";
+import React from 'react';
+import { cn } from "@/lib/utils";
+import SectionTitle from "./SectionTitle";
 
-export function AboutSection() {
+type AboutSectionProps = {
+  className?: string;
+};
+
+const AboutSection: React.FC<AboutSectionProps> = ({ className }) => {
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className={cn("py-20 bg-white", className)}>
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-          <div className="w-20 h-1 rajasthan-gradient mx-auto rounded-full"></div>
+          <SectionTitle>About Me</SectionTitle>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            <div className="w-full h-[400px] rounded-2xl overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-4.0.3" 
-                alt="Rajasthan Architecture" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 rajasthan-gradient rounded-full -z-10"></div>
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-secondary rounded-full -z-10"></div>
-          </div>
-          
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h3 className="text-2xl md:text-3xl font-bold rajasthan-gradient-text">
-              I'm Kartik Thapa from Rajasthan
-            </h3>
-            
-            <div className="text-foreground/80 leading-relaxed space-y-4">
-              <p>
-                I'm Kartik Thapa—a developer, designer, and digital storyteller currently pursuing my undergraduate studies in CHD. Whether I'm building a culturally themed portfolio, participating in debates with my DEBSOC team, or designing intuitive user interfaces for hackathons, I bring creativity and clarity to every project I take on. My work reflects a balance between technical proficiency—like C, C++, SQL, and React—and an eye for design, rooted in my fascination with vibrant cultures like that of Rajasthan.
-              </p>
-              
-              <p>
-                I've also stood for student parliament, driven by the belief that representation should come with purpose, not ego. My portfolio blends code and culture to narrate stories that matter, often exploring themes like positivity, tradition, and identity. Whether it's through collaborative projects, visual experiments, or deep dives into history and propaganda for academic presentations, I aim to connect ideas in a way that resonates.
-              </p>
-              
-              <p>
-                This space is more than just a showcase—it's a reflection of my journey as a builder, thinker, and creative explorer.
-              </p>
+            <p className="text-gray-700 font-poppins leading-relaxed">
+              Hello! I'm Kartik Thapa, born and raised in the beautiful city of Udaipur, Rajasthan - often called the "City of Lakes" and the "Venice of the East."
+            </p>
+            <p className="text-gray-700 font-poppins leading-relaxed">
+              Growing up in Udaipur has instilled in me a deep appreciation for our rich cultural heritage, art, and architecture. The serene lakes, majestic palaces, and vibrant traditions of Rajasthan have shaped my perspective and inspired my journey.
+            </p>
+            <p className="text-gray-700 font-poppins leading-relaxed">
+              I'm passionate about blending my technical knowledge with the artistic sensibilities I've developed in this culturally rich environment. When I'm not working on my technical projects, you can find me exploring the hidden gems of Udaipur or learning about our local traditions and crafts.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <img src="https://source.unsplash.com/random/300x400/?udaipur,palace" alt="Udaipur Palace" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
             </div>
-            
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              <Card className="bg-card/50 backdrop-blur-sm border-border">
-                <CardContent className="p-4 text-center">
-                  <h4 className="text-lg font-bold rajasthan-gradient-text">Based in</h4>
-                  <p>Rajasthan, India</p>
-                </CardContent>
-              </Card>
-              <Card className="bg-card/50 backdrop-blur-sm border-border">
-                <CardContent className="p-4 text-center">
-                  <h4 className="text-lg font-bold rajasthan-gradient-text">Experience</h4>
-                  <p>5+ Years</p>
-                </CardContent>
-              </Card>
+            <div className="overflow-hidden rounded-lg shadow-lg mt-8">
+              <img src="https://source.unsplash.com/random/300x400/?udaipur,lake" alt="Udaipur Lake" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <img src="https://source.unsplash.com/random/300x400/?rajasthan,culture" alt="Rajasthan Culture" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div className="overflow-hidden rounded-lg shadow-lg mt-8">
+              <img src="https://source.unsplash.com/random/300x400/?rajasthan,craft" alt="Rajasthan Craft" className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
+export default AboutSection;

@@ -1,46 +1,48 @@
 
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowUp } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import { ChevronUp } from 'lucide-react';
 
-export function ScrollToTop() {
+const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   // Show button when page is scrolled down
-  const toggleVisibility = () => {
-    if (window.scrollY > 500) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 500) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
 
-  // Function to scroll to top
+    window.addEventListener('scroll', toggleVisibility);
+
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+    };
+  }, []);
+
+  // Scroll to top smoothly
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", toggleVisibility);
-    
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
-
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <>
       {isVisible && (
-        <Button
+        <button
           onClick={scrollToTop}
-          size="icon"
-          className="rounded-full rajasthan-gradient text-white shadow-lg hover:shadow-xl transition-all duration-300"
+          className="fixed right-6 bottom-6 p-3 bg-rajasthan-blue text-white rounded-full shadow-lg hover:bg-rajasthan-maroon transition-colors z-40"
           aria-label="Scroll to top"
         >
-          <ArrowUp className="h-5 w-5" />
-        </Button>
+          <ChevronUp size={24} />
+        </button>
       )}
-    </div>
+    </>
   );
-}
+};
+
+export default ScrollToTop;

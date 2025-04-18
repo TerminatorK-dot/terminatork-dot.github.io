@@ -1,45 +1,52 @@
 
-import { ArrowDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import React from 'react';
+import { cn } from "@/lib/utils";
 
-export function HeroSection() {
+type HeroSectionProps = {
+  className?: string;
+};
+
+const HeroSection: React.FC<HeroSectionProps> = ({ className }) => {
   return (
-    <section id="home" className="min-h-screen relative flex flex-col justify-center items-center text-center px-4 py-20">
-      {/* Background with overlay */}
-      <div className="absolute inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1493962853295-0fd70327578a?ixlib=rb-4.0.3')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-background/85 dark:bg-background/90"></div>
-      </div>
-      
-      <div className="container mx-auto max-w-4xl">
-        <div className="floating space-y-6">
-          <h2 className="text-xl md:text-2xl font-medium text-foreground/80">Hello, I'm</h2>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold rajasthan-gradient-text">
-            Kartik Thapa
+    <section id="home" className={cn("min-h-screen flex items-center pt-16 bg-gradient-to-b from-white to-rajasthan-sand/20", className)}>
+      <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div className="order-2 md:order-1">
+          <h1 className="text-4xl md:text-6xl font-bold font-playfair mb-4">
+            <span className="text-rajasthan-blue">Namaste!</span> <br />
+            I'm <span className="text-rajasthan-maroon">Kartik Thapa</span>
           </h1>
-          <p className="text-xl md:text-2xl text-foreground/80 mt-4 max-w-2xl mx-auto">
-            A creative professional from the vibrant land of Rajasthan
+          <p className="text-xl md:text-2xl text-gray-700 mb-8 font-poppins">
+            From the city of lakes - <span className="italic text-rajasthan-blue">Udaipur, Rajasthan</span>
           </p>
-          
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Button asChild size="lg" className="rajasthan-gradient text-white font-medium">
-              <a href="#projects">View My Work</a>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-pulse">
-              <a href="#contact">Get In Touch</a>
-            </Button>
+          <p className="text-gray-600 mb-8 font-poppins">
+            Welcome to my personal website. I'm passionate about showcasing the beauty of my birthplace while sharing my journey, skills, and aspirations.
+          </p>
+          <div className="flex space-x-4">
+            <a href="#about" className="px-6 py-3 bg-rajasthan-blue text-white rounded-md hover:bg-rajasthan-blue/90 transition-colors font-poppins">
+              About Me
+            </a>
+            <a href="#resume" className="px-6 py-3 border border-rajasthan-orange text-rajasthan-orange rounded-md hover:bg-rajasthan-orange/10 transition-colors font-poppins">
+              Resume
+            </a>
+          </div>
+        </div>
+        <div className="order-1 md:order-2 flex justify-center">
+          <div className="w-64 h-64 md:w-80 md:h-80 relative">
+            <div className="absolute inset-0 rounded-full bg-rajasthan-sand border-4 border-rajasthan-blue shadow-xl overflow-hidden">
+              <img 
+                src="/lovable-uploads/00cfe535-e236-4390-8bf0-58a21a199848.png" 
+                alt="Kartik Thapa" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-lg border border-rajasthan-sand">
+              <span className="text-rajasthan-blue font-bold font-playfair">Udaipur</span>
+            </div>
           </div>
         </div>
       </div>
-      
-      <a 
-        href="#about" 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-foreground/70 hover:text-foreground transition-colors"
-      >
-        <div className="flex flex-col items-center space-y-2">
-          <span className="text-sm">Scroll Down</span>
-          <ArrowDown className="w-5 h-5 animate-bounce" />
-        </div>
-      </a>
     </section>
   );
-}
+};
+
+export default HeroSection;

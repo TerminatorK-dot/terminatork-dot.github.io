@@ -2,87 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
 @layer base {
   :root {
-    /* Rajasthan-inspired light mode */
-    --background: 40 30% 98%;
-    --foreground: 220 30% 15%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 30% 15%;
+    --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 15%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 217 70% 40%;
+    --primary: 210 100% 40%; /* Lake Pichola blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 26 100% 62%;
-    --secondary-foreground: 220 30% 15%;
+    --secondary: 30 100% 50%; /* Rajasthani saffron */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 96.1%;
+    --muted: 30 25% 80%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 342 80% 65%;
+    --accent: 330 60% 40%; /* Rajasthani maroon */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 15% 90%;
-    --input: 30 15% 90%;
-    --ring: 217 70% 40%;
+    --border: 30 25% 80%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 100% 40%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 40 30% 98%;
-    --sidebar-foreground: 220 30% 15%;
-    --sidebar-primary: 217 70% 40%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 26 100% 62%;
-    --sidebar-accent-foreground: 220 30% 15%;
-    --sidebar-border: 30 15% 90%;
-    --sidebar-ring: 217 70% 40%;
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    /* Rajasthan-inspired dark mode */
-    --background: 220 40% 8%;
-    --foreground: 30 20% 90%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 220 40% 12%;
-    --card-foreground: 30 20% 90%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 220 40% 12%;
-    --popover-foreground: 30 20% 90%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 217 70% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 26 100% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 30% 20%;
-    --muted-foreground: 30 20% 70%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 342 80% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 40%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 30% 20%;
-    --input: 217 30% 20%;
-    --ring: 217 70% 50%;
-    
-    --sidebar-background: 220 40% 12%;
-    --sidebar-foreground: 30 20% 90%;
-    --sidebar-primary: 217 70% 50%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 26 100% 50%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 217 30% 20%;
-    --sidebar-ring: 217 70% 50%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -93,78 +99,5 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-}
-
-@layer utilities {
-  .rajasthan-gradient {
-    @apply bg-gradient-to-r from-rajasthan-blue via-rajasthan-pink to-rajasthan-orange;
-  }
-  
-  .rajasthan-gradient-text {
-    @apply bg-gradient-to-r from-rajasthan-blue via-rajasthan-pink to-rajasthan-orange bg-clip-text text-transparent;
-  }
-  
-  .rajasthan-gradient-hover {
-    @apply hover:bg-gradient-to-r hover:from-rajasthan-orange hover:via-rajasthan-pink hover:to-rajasthan-blue transition-all duration-500;
-  }
-  
-  .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .glass {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl;
-  }
-  
-  .dark .glass {
-    @apply bg-black/20 backdrop-blur-lg border border-white/10 rounded-xl;
-  }
-  
-  .section-fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  
-  .section-fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .page-transition {
-    @apply transition-all duration-500 ease-in-out;
-  }
-  
-  .skill-bar {
-    @apply h-2 rounded-full bg-secondary relative overflow-hidden;
-  }
-  
-  .skill-progress {
-    @apply h-full rounded-full absolute top-0 left-0 rajasthan-gradient;
-  }
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-.floating {
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes border-pulse {
-  0% { border-color: theme('colors.rajasthan.blue'); }
-  33% { border-color: theme('colors.rajasthan.pink'); }
-  66% { border-color: theme('colors.rajasthan.orange'); }
-  100% { border-color: theme('colors.rajasthan.blue'); }
-}
-
-.border-pulse {
-  animation: border-pulse 4s infinite;
-  border-width: 2px;
-  border-style: solid;
 }
