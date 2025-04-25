@@ -4,7 +4,7 @@ This is an enhanced personal website created as part of Assignment 3, Question 1
 
 ## About the Website
 
-This website showcases information about Kartik Thapa, a student and Java developer from Palampur, Himachal Pradesh. The website includes:
+This website showcases information about Kartik Thapa, a student udaipur rajasthan The website includes:
 
 - Personal introduction and background
 - Skills and expertise in Java and Calculus
@@ -45,14 +45,7 @@ The website is built using:
 - Google Fonts for typography
 - Embedded SVG images for gallery and profile pictures
 
-## Images
 
-The website features SVG images representing:
-- Tea gardens of Palampur
-- Dhauladhar mountain range
-- Neugal river scenes
-- Traditional Himachali architecture
-- Valley views from the region
 
 All images are embedded directly in the HTML using data URLs, making the website completely self-contained and ensuring it works without requiring external image hosting.
 
