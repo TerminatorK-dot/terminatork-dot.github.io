@@ -1,26 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kartik Thapa | Udaipur, Rajasthan</title>
-    <meta name="description" content="Personal website of Kartik Thapa from Udaipur, Rajasthan, showcasing profile, education, skills and beautiful Rajasthan culture" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <!-- Fix the viewport meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Kartik Thapa</title>
+    <!-- Favicon approaches -->
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+klEQVQ4EeVSOwrCQBCdrQewsBO1trGzs7K09BKewMZG8ByCZxA8gKWlnZ2tjZ2VINgE37qzZGOCFoLgg8ew+5h5b2Y/Qvx5lbksRyeTRbQToeC6HlmW5di2zfd9/QQMQ1G0TgAwvJNhyzenrTDGdJ7nA9/3O0EQsJSy9QP8MAzZsqyRUmrbNAdwSdJ0KaW8p2nabJpEV2SkD5hSQnmeP7Q/CbD/mQQhxIAABFEUsWmabdu2H+DnsE/BbhzHTZIkU+AGoGsYRt0wjDoB9mmazhDYn0wLQLiAe5/AJhOdJhPd3cNw0rbt3XMXNwQQaJrWFbBf/fZY5G+rAhYjJJGvgJhVAAAAAElFTkSuQmCC">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+klEQVQ4EeVSOwrCQBCdrQewsBO1trGzs7K09BKewMZG8ByCZxA8gKWlnZ2tjZ2VINgE37qzZGOCFoLgg8ew+5h5b2Y/Qvx5lbksRyeTRbQToeC6HlmW5di2zfd9/QQMQ1G0TgAwvJNhyzenrTDGdJ7nA9/3O0EQsJSy9QP8MAzZsqyRUmrbNAdwSdJ0KaW8p2nabJpEV2SkD5hSQnmeP7Q/CbD/mQQhxIAABFEUsWmabdu2H+DnsE/BbhzHTZIkU+AGoGsYRt0wjDoB9mmazhDYn0wLQLiAe5/AJhOdJhPd3cNw0rbt3XMXNwQQaJrWFbBf/fZY5G+rAhYjJJGvgJhVAAAAAElFTkSuQmCC">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js" defer></script>
+    <style>
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/lakeudaipur.jpg') center/cover no-repeat;
+            opacity: 0.7;
+            z-index: 0;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+        
+        header h1, header p {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
 
-    <meta property="og:title" content="kartik-rajasthan-vibes" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <!-- Dark Mode Toggle -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <div class="toggle-icons">
+                <span class="sun-icon"><i class="fas fa-sun"></i></span>
+                <span class="moon-icon"><i class="fas fa-moon"></i></span>
+            </div>
+        </label>
+    </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <header>
+        <div class="container">
+            <h1>Kartik Thapa</h1>
+            <p class="subtitle">Student & Java Developer from Udaipur, Rajasthan</p>
+            <a href="#about" class="learn-more-btn">
+                <i class="fas fa-arrow-down"></i> Learn More
+            </a>
+        </div>
+    </header>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <nav id="mainNav">
+        <div class="container">
+            <ul>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#text-analysis" class="nav-link">Text Analysis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="fade-in">About Me</h2>
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <p>Hello! I'm <span class="highlight">Kartik Thapa</span>, from the beautiful town of Udaipur in Rajasthan. 
+                    I'm passionate about programming and mathematics,.</p>
+                    
+                    <p>Currently, I am studying at <span class="highlight">IIIT Hyderabad</span>, pursuing my academic interests in technology and computer science. My journey in programming began with a fascination for how computers process information, which led me to explore Java programming deeply.</p>
+                    
+                    <p>Beyond academics, I've achieved recognition in scientific research by participating in the <span class="highlight">National Children Science Congress at the national level</span>. I have also been part of the <span class="highlight">INSPIRE Awards</span> and the <span class="highlight">Asteroid Search Campaign organized by NASA</span>, which have been incredible learning experiences.</p>
+                    
+                    <p>I completed my schooling from <span class="highlight">St. Anthony's Sr. Sec. School</span>, where I built a strong foundation for my academic pursuits while being surrounded by the scenic beauty of Rajasthan.</p>
+                    
+                    <div class="cv-container">
+                        <a href="images/kartikthapa_cv.pdf" class="cv-download-btn" download="kartikthapa_cv.pdf">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/profile.jpg" alt="Kartik Thapa" id="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="fade-in">Skills & Expertise</h2>
+            <div class="skills-container">
+                
+                
+                <div class="skill-card fade-in">
+                    <h3><i class="fas fa-square-root-alt"></i> Calculus</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-level="85"></div>
+                        <span class="skill-value">85%</span>
+                    </div>
+                    <p>Differential equations, integral calculus, and mathematical modeling.</p>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <h3><i class="fas fa-brain"></i> Problem Solving</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-level="88"></div>
+                        <span class="skill-value">88%</span>
+                    </div>
+                    <p>Analytical thinking, algorithmic approach, and creative solutions.</p>
+                </div>
+                
+                <div class="skill-card fade-in">
+                    <h3><i class="fas fa-atom"></i> Scientific Research</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" data-level="92"></div>
+                        <span class="skill-value">92%</span>
+                    </div>
+                    <p>Award-winning experience in Children Science Congress competitions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="fade-in">Education & Courses</h2>
+            <div class="education-container">
+                <div class="education-card fade-in">
+                    <h3><i class="fas fa-university"></i> IIIT Hyderabad</h3>
+                    <p>Currently pursuing higher education in Computer Science, focusing on advanced programming concepts and technology innovation.</p>
+                    <div class="education-date"><i class="far fa-calendar-alt"></i> Present</div>
+                </div>
+                
+                <div class="education-card fade-in">
+                    <h3><i class="fas fa-school"></i> St. Anthony's Sr. Sec. School</h3>
+                    <p>Completed school education with excellence in academics and extracurricular activities.</p>
+                    <div class="education-date"><i class="far fa-calendar-alt"></i> Graduated</div>
+                </div>
+                
+                <div class="education-card fade-in">
+                    <h3><i class="fas fa-square-root-alt"></i> Calculus Specialization</h3>
+                    <p>Completed various courses on calculus, including differential and integral calculus, with applications in real-world problem-solving scenarios.</p>
+                    <div class="education-date"><i class="far fa-calendar-alt"></i> 2023 - 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="fade-in">Gallery - Udaipur, Rajasthan</h2>
+            <p class="section-intro fade-in">A glimpse of the beautiful landscapes and natural beauty of my hometown Udaipur.</p>
+            <div class="gallery-container">
+                <div class="gallery-item fade-in">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <img src="images/citypalace,udaipur.jpeg" alt="City Palace Udaipur">
+                    <p>City Palace of Udaipur</p>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <img src="images/aravallihills.jpeg" alt="Aravalli Hills">
+                    <p>Aravalli Hills of Rajasthan</p>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <img src="images/jagmandir.jpeg" alt="Jag Mandir">
+                    <p>Jag Mandir Island Palace</p>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <img src="images/udaipurlandscape.jpeg" alt="Udaipur Landscape">
+                    <p>Scenic Landscape of Udaipur</p>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <img src="images/lakepichola.jpeg" alt="Lake Pichola">
+                    <p>Lake Pichola, Udaipur</p>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <img src="images/rajasthanicultureheritage.jpeg" alt="Rajasthani Culture">
+                    <p>Cultural Heritage of Rajasthan</p>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <img src="images/lakeudaipur.jpg" alt="Lake Udaipur">
+                    <p>Lake Palace, Udaipur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="text-analysis" class="section">
+    <div class="container">
+        <div class="analysis-box">
+            <div class="text-analysis-header">
+                <h2 class="fade-in">
+                    <i class="fas fa-code"></i>
+                    Text Analysis Tool
+                    <i class="fas fa-code"></i>
+                </h2>
+            </div>
+            <div class="analysis-container">
+                <textarea 
+                    id="textInput" 
+                    placeholder="Enter your text here for analysis (minimum 10000 words recommended)..." 
+                    class="analysis-textarea"
+                ></textarea>
+                <button onclick="analyzeText()" class="analysis-btn">
+                    <i class="fas fa-magic"></i> 
+                    Analyze Text
+                </button>
+                <div class="results-container">
+                    <div id="basicStats" class="result-section">
+                        <h3><i class="fas fa-chart-bar"></i> Basic Statistics</h3>
+                    </div>
+                    <div id="pronounStats" class="result-section">
+                        <h3><i class="fas fa-user"></i> Pronoun Analysis</h3>
+                    </div>
+                    <div id="prepositionStats" class="result-section">
+                        <h3><i class="fas fa-link"></i> Preposition Usage</h3>
+                    </div>
+                    <div id="articleStats" class="result-section">
+                        <h3><i class="fas fa-font"></i> Article Analysis</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="connect" class="section">
+    <div class="container">
+        <div class="email-container fade-in">
+            <div class="email-card">
+                <i class="fas fa-envelope pulse"></i>
+                <h3>Let's Connect</h3>
+                <a href="mailto:kartik.thapa@research.iiit.ac.in" class="email-link">
+                    kartik.thapa@research.iiit.ac.in
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <img id="modalImage">
+            <div id="modalCaption"></div>
+            <span class="close-modal"><i class="fas fa-times-circle"></i></span>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Kartik Thapa</h3>
+                <p>Student from Udaipur, Rajasthan</p>
+                
+                <div class="social-links">
+                    <a href="https://github.com/TerminatorK-dot" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/kartik-thapa-ab2a0b317/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                
+                <a href="#" class="back-to-top" id="backToTop">
+                    <i class="fas fa-arrow-up"></i> Back to Top
+                </a>
+            </div>
+            
+            <p class="copyright">&copy; 2025 Kartik Thapa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
